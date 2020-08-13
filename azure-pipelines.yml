@@ -1,13 +1,7 @@
-# Xamarin.Android
-# Build a Xamarin.Android project.
-# Add steps that test, sign, and distribute an app, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin
+pool: v-aprozo
 
-trigger:
-- master
-
-pool:
-  vmImage: 'windows-2019'
+variables:
+  group: 'TestVariableGroup'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -18,8 +12,7 @@ steps:
 
 - task: XamarinAndroid@1
   inputs:
-    projectFile: '**/*droid*.csproj'
+    projectFile: '**/xamarin-android.Android*.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
     createAppPackage: false
-
