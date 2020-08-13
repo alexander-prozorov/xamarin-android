@@ -12,6 +12,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
+  group: 'AppSigning'
 
 steps:
 - task: NuGetToolInstaller@1
