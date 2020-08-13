@@ -9,9 +9,6 @@ trigger:
 pool:
   vmImage: 'windows-2019'
 
-variables:
-  group: 'TestVariableGroup'
-
 steps:
 - task: NuGetToolInstaller@1
 
