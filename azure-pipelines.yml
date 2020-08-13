@@ -10,9 +10,7 @@ pool:
   vmImage: 'windows-2019'
 
 variables:
-  buildConfiguration: 'Release'
-  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
-  group: 'AppSigning'
+  group: 'TestVariableGroup'
 
 steps:
 - task: NuGetToolInstaller@1
