@@ -1,0 +1,18 @@
+pool: v-aprozo
+
+variables:
+  group: 'TestVariableGroup'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '**/*.sln'
+
+- task: XamarinAndroid@1
+  inputs:
+    projectFile: '**/xamarin-android.Android*.csproj'
+    outputDirectory: '$(outputDirectory)'
+    configuration: '$(buildConfiguration)'
+    createAppPackage: false
